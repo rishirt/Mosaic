@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosaic Canvas</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+</head>
+<body style="max-height: 100%;">
+    <div id="parentContainer" style="display: flex;">
+        <div id="sidebar" class="">
+            <div id="search-filter" class="flex flex-col px-4 sticky top-0 z-10 bg-white box-border border-b border-slate-300">
+                <input 
+                    type="text" 
+                    name="search" 
+                    id="search" 
+                    placeholder="Search for anything"
+                    class=" 
+                        w-auto
+                        mb-4 mt-4
+                        rounded-md 
+                        border-0 
+                        p-2
+                        text-slate-800
+                        text-sm
+                        outline-none
+                        shadow-sm 
+                        ring-1 ring-inset ring-slate-300 
+                        placeholder:text-slate-400 
+                        focus:ring-2 focus:ring-inset focus:ring-orange-500">
+                <div id="filter" class="flex flex-wrap gap-2 mb-4"></div>
+            </div>
+            <div id="content"></div>
+        </div>
+        <canvas id="canvasContainer"></canvas>
+    </div>
+    <script src="../library/fabric.js"></script>
+    <script src="./scripts/canvas.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

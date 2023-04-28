@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Mosaic",
+    "description": "A tool for information seeking and sensemaking",
+    "version": "1.0",
+    "host_permissions": ["<all_urls>"],
+    "permissions": ["tabGroups","tabs","activeTab","storage","unlimitedStorage", "contextMenus"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "css": ["stylesheet.css"],
+        "js": ["interact.js","content.js"]
+      }
+    ], 
+    "web_accessible_resources": [
+      {
+        "resources": [ "/assets/*" ],
+        "matches": [ "<all_urls>" ]
+      }
+    ],
+    "action": {
+      "default_title": "Open Mosaic" 
+    },
+    "commands": {
+      "toggle-sidebar": {
+        "suggested_key": "Ctrl+Shift+Y",
+        "description": "Toggle Sidebar"
+      },
+      "toggle-canvas-controls": {
+        "suggested_key": "Ctrl+Shift+K",
+        "description": "Toggle Canvas Controls"
+      },
+      "take-screenshot": {
+        "suggested_key": "Ctrl+K",
+        "description": "Take Screenshot"
+      }
+
+    }
+}
